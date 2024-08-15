@@ -15,7 +15,7 @@ def generate_tort_char(name, labels, values):
     ax.pie(values, labels=labels, autopct="%0.1f %%")
     ax.axis('equal')
     ax.set_title('Gráfico de torta')
-    plt.savefig(f'./imgs/{name}tort.png')
+    plt.savefig(f'./imgs/{name}_tort_char.png')
     plt.close()
 
 if __name__ == '__main__':

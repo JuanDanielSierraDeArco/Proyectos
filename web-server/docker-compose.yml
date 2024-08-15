@@ -1,0 +1,24 @@
+# Definición de los servicios que Docker Compose va a gestionar.
+services:
+  # Nombre del servicio, en este caso, un servidor web.
+  web-server:
+    # Instrucciones para construir la imagen Docker del servicio.
+    build: 
+      # El contexto de construcción, que es el directorio actual.
+      context: .
+      # El archivo Dockerfile que se utilizará para construir la imagen.
+      dockerfile: Dockerfile
+    
+    # Volúmenes que se montarán en el contenedor.
+    volumes:
+      # El directorio actual en la máquina host (.) se monta en el directorio /app dentro del contenedor.
+      # Esto es útil para desarrollo, ya que refleja cambios locales en el contenedor.
+      - .:/app
+    
+    # Configuración del mapeo de puertos entre el host y el contenedor.
+    ports:
+      # El puerto 80 del contenedor se mapea al puerto 80 del host, lo que permite acceder al servicio
+      # a través de http://localhost:80.
+      - '80:80'
+
+
